@@ -76,4 +76,10 @@ $(function () {
             }
           })
     })
+
+    // 3、解决表单重置的bug
+    //问题：表单重置，只是把文本重置了，正确与否的表单状态没有重置
+    $('[type="reset"]').click(function(){
+      $('#form').data('bootstrapValidator').resetForm(true);
+    })
 })
