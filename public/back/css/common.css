@@ -130,3 +130,11 @@ ul {
   color: #A94442;
 }
 
+/* 柱状图容器 */
+/* 饼状图容器 */
+.main .mian_content .content_left,
+.main .mian_content .content_right {
+  width: 48%;
+  height: 400px;
+  background-color: skyblue;
+}
