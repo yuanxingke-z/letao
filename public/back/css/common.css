@@ -92,7 +92,6 @@ ul {
 /* 主页面共同样式 */
 .main {
   height: 1000px;
-  background-color: pink;
   padding-left: 180px;
   padding-top: 50px;
   transition: padding-left 1s;
@@ -137,4 +136,11 @@ ul {
   width: 48%;
   height: 400px;
   background-color: skyblue;
+}
+
+/* 用户管理的表格样式 */
+.main .mian_content table thead th,
+.main .mian_content table tbody td {
+  text-align: center;
+  vertical-align: middle;
 }

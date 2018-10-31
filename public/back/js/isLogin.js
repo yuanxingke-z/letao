@@ -6,8 +6,6 @@ $.ajax({
   success: function (info) {
     if (info.error === 400) {
       location.href = 'login.html';
-    } else {
-      console.log(info);
     }
   }
 })
