@@ -15,8 +15,7 @@
   <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
   <!-- 引入共同的后台管理样式 -->
   <link rel="stylesheet" href="./css/common.css">
-  <!-- 引入ECharts插件 -->
-  <script src="./lib/echarts/echarts.min.js"></script>
+
 </head>
 
 <body>
@@ -39,9 +38,9 @@
           <a class="category" href="javascript:;">
             <i class="glyphicon glyphicon-list"></i><span>分类管理</span>
           </a>
-          <div class="child">
+          <div class="child" style="display:block">
             <a href="first.html">一级分类</a>
-            <a href="second.html">二级分类</a>
+            <a class="active" href="second.html">二级分类</a>
           </div>
         </li>
         <li><a href="product.html"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a></li>
@@ -88,10 +87,7 @@
         <li class="active">首页</li>
       </ol>
 
-      <!-- 柱状图 -->
-      <div class="content_left pull-left"></div>
-      <!-- 饼状图 -->
-      <div class="content_right pull-right"></div>
+
     </div>
   </div>
 
@@ -108,8 +104,6 @@
   <script src="./lib/nprogress/nprogress.js"></script>
   <!-- 引入共同的进度条管理文件 -->
   <script src="./js/common.js"></script>
-  <!-- 引入index插件 -->
-  <script src="./js/index.js"></script>
 </body>
 
 </html>
