@@ -12,3 +12,10 @@ $(document).ajaxStop(function () {
     NProgress.done();
   }, 200)
 })
+
+//点击分类管理展开二级菜单
+$(function(){
+  $('.aside .nav .category').click(function(){
+    $(this).next().stop().slideToggle();
+  })
+})
