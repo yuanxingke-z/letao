@@ -88,9 +88,85 @@
         <li class="active">二级分类</li>
       </ol>
 
+      <!-- 添加分类按钮 -->
+      <button class="btn btn-default marg_b20 addCategory">添加分类</button>
+
+      <!-- 模态框 -->
+      <div class="modal fade" id="addModal" tabindex="-1"> <!-- 蒙层 -->
+        <!-- 真实的模态框 -->
+        <div class="modal-dialog modal-sm">  
+          <div class="modal-content">
+            <form id="form">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">添加分类</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                          请选择一级分类
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">女士馆</a></li>
+                        </ul>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="brandName" class="form-control" id="exampleInputEmail1" placeholder="请输入二级分类">
+                  </div>
+                  <div class="form-group">
+                    <label class="btn btn-default" for="brandLogo">上传图片</label>
+                    <input style="display:none" type="file" name="pic1" id="fileUploads">
+                  </div>
+                  <div class="form-group">
+                    <img src="./images/none.png">
+                  </div>
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                  <button type="submit" class="btn btn-primary">添加</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- 添加表格 -->
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>序号</th>
+            <th>一级分类名称</th>
+            <th>二级分类名称</th>
+            <th>二级分类LOGO</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+
+      <!-- 添加分页 -->
+      <div class="text-right">
+        <ul id="paginator"></ul>
+      </div>
 
     </div>
   </div>
+
+  <script type="text/html" id="secondTmp">
+    {{each rows v i }}
+        <tr>
+            <td>{{i+1+(page-1)*size}}</td>
+            <td>{{v.categoryName}}</td>
+            <td>{{v.brandName}}</td>
+            <td><img height="50" src="{{v.brandLogo}}"></td>
+        </tr>
+      {{/each}}
+  </script>
 
 
   <!-- 引入jquery文件 -->
@@ -105,6 +181,12 @@
   <script src="./lib/nprogress/nprogress.js"></script>
   <!-- 引入共同的进度条管理文件 -->
   <script src="./js/common.js"></script>
+  <!-- 引入模板引擎插件 -->
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <!-- 引入分页功能插件 -->
+  <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+  <!-- 引入second插件 -->
+  <script src="./js/second.js"></script>
 </body>
 
 </html>
