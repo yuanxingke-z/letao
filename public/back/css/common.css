@@ -13,7 +13,9 @@ ul {
 .bdc {
   background-color: #222D32;
 }
-
+.marg_b20 {
+  margin-bottom: 20px;
+}
 /* 登录页面样式 */
 .marg_160 {
   margin-top: 160px;
