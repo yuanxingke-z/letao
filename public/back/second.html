@@ -102,29 +102,30 @@
                   <h4 class="modal-title" id="myModalLabel">添加分类</h4>
                 </div>
                 <div class="modal-body">
-                  <div class="form-group">
-                    <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                          请选择一级分类
-                          <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">女士馆</a></li>
-                        </ul>
-                      </div>
-                  </div>
-                  <div class="form-group">
-                    <input type="text" name="brandName" class="form-control" id="exampleInputEmail1" placeholder="请输入二级分类">
-                  </div>
-                  <div class="form-group">
-                    <label class="btn btn-default" for="brandLogo">上传图片</label>
-                    <input style="display:none" type="file" name="pic1" id="fileUploads">
-                  </div>
-                  <div class="form-group">
-                    <img width="100" height="100" src="./images/none.png">
-                    
-                  </div>
-                  
+                    <div class="form-group">
+                      <div class="dropdown">
+                          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                            请选择一级分类
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <!-- 挖坑 -->
+                          </ul>
+                          <input type="hidden" name="categoryId">
+                          <input type="hidden" name="hot" value="1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="brandName" class="form-control" id="exampleInputEmail1" placeholder="请输入二级分类">
+                    </div>
+                    <div class="form-group">
+                        <label class="btn btn-default" for="fileUpload">上传图片</label>
+                        <input style="display:none" type="file" name="pic1" id="fileUpload" accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <img width="100" height="100" src="./images/none.png">
+                        <input type="hidden" name="brandLogo">
+                    </div>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -157,7 +158,7 @@
 
     </div>
   </div>
-
+  <!-- 表格渲染模板 -->
   <script type="text/html" id="secondTmp">
     {{each rows v i }}
         <tr>
@@ -168,6 +169,13 @@
         </tr>
       {{/each}}
   </script>
+  <!-- 一级分类下拉框模板 -->
+  <script type="text/html" id="dropDown">
+    {{each rows v i }}
+    <li><a data-id={{v.id}} href="#">{{v.categoryName}}</a></li>
+    {{/each}}
+  </script>
+
 
 
   <!-- 引入jquery文件 -->
@@ -186,6 +194,8 @@
   <script src="./lib/artTemplate/template-web.js"></script>
   <!-- 引入分页功能插件 -->
   <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+  <!-- 引入文件上传ui小插件 -->
+  <script src=".//"></script>
   <!-- 引入second插件 -->
   <script src="./js/second.js"></script>
 </body>
