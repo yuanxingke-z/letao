@@ -64,18 +64,26 @@ $(function () {
         //将数据渲染到页面中
         $('.dropdown-menu').html(htmlStr2);
 
-        // 给一级分类按钮注册事件委托，因为下拉的分类都是动态生成的
-        $('.dropdown-menu').on('click', 'a', function () {
-          var txt = $(this).text();
-          $('#dropdownMenu1').text(txt);  //将按钮文本设置为选中类
-          var id = $(this).data('id');
-          $('[name="categoryId"]').val(id);  //将id赋值给输入框，传递给后台
-        })
-
-
       }
     })
   })
 
+  // 给一级分类按钮注册事件委托，因为下拉的分类都是动态生成的
+  $('.dropdown-menu').on('click', 'a', function () {
+    var txt = $(this).text();
+    $('#dropdownMenu1').text(txt);  //将按钮文本设置为选中类
+    var id = $(this).data('id');
+    $('[name="categoryId"]').val(id);  //将id赋值给输入框，传递给后台
+  })
+
+  // 文件上传插件初始化
+  $("#fileupload").fileupload({
+      dataType:"json",
+      //e：事件对象
+      //data：图片上传后的对象，通过data.result.picAddr可以获取上传后的图片地址
+      done:function (e, data) {
+        console.log(data);
+      }
+  });
 
 })

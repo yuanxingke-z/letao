@@ -119,8 +119,8 @@
                       <input type="text" name="brandName" class="form-control" id="exampleInputEmail1" placeholder="请输入二级分类">
                     </div>
                     <div class="form-group">
-                        <label class="btn btn-default" for="fileUpload">上传图片</label>
-                        <input style="display:none" type="file" name="pic1" id="fileUpload" accept="image/*">
+                        <label class="btn btn-default" for="fileupload">上传图片</label>
+                        <input id="fileupload" type="file" name="pic1" data-url="/category/addSecondCategoryPic" accept="image/*" style="display:none">
                     </div>
                     <div class="form-group">
                         <img width="100" height="100" src="./images/none.png">
@@ -195,7 +195,9 @@
   <!-- 引入分页功能插件 -->
   <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
   <!-- 引入文件上传ui小插件 -->
-  <script src=".//"></script>
+  <script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+  <!-- 引入jquery上传核心插件 -->
+  <script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
   <!-- 引入second插件 -->
   <script src="./js/second.js"></script>
 </body>
