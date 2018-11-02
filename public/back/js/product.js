@@ -82,7 +82,6 @@ $(function () {
   $('#fileupload').fileupload({
     dataType: 'json',
     done: function (e, data) {
-      console.log(data.result);
       //准备数据
       var picObj = data.result;
       var picAddr = picObj.picAddr;  //获取图片路径
@@ -109,8 +108,6 @@ $(function () {
     }
 
   })
-
-
 
   //添加表单校验
   $('#form').bootstrapValidator({
@@ -216,10 +213,34 @@ $(function () {
 
   })
 
-
-
-
-
+  //注册表单校验完成事件
+  $('#form').on('success.form.bv', function (e) {
+    e.preventDefault();
+    //拼接字符串
+    var params = $('#form').serialize(); //表单序列化的字符串
+    params += '&picName1=' + picArr[0].picName + '&picAddr1=' + picArr[0].picAddr
+    params += '&picName2=' + picArr[1].picName + '&picAddr2=' + picArr[1].picAddr
+    params += '&picName3=' + picArr[2].picName + '&picAddr3=' + picArr[2].picAddr    
+    $.ajax({
+      type: 'post',
+      url: '/product/addProduct',
+      data: params,
+      dataType: 'json',
+      success: function () {
+        //关闭模态框 
+        $('#addModal').modal('hide');
+        //渲染当前页
+        currentPage = 1 ;
+        render();
+        //重置表单的内容和状态
+        $('#form').data('bootstrapValidator').resetForm(true);
+        //手动重置二级分类下拉框的文本
+        $('#dropdownMenu1').text('请选择二级分类');
+        //手动清除图片
+        $('#img_box img').remove();
+      }
+    })
+  })
 
 
 
