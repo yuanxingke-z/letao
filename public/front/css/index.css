@@ -1,0 +1,15 @@
+.lt_main .nav {
+  padding: 10px;
+}
+ li {
+  float: left;
+  width: 33.33%;
+}
+.lt_main .nav li a {
+  display: block;
+}
+.lt_main .nav li a img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

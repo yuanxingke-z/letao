@@ -14,6 +14,8 @@
    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
    <!-- 引入共同的样式 -->
    <link rel="stylesheet" href="./css/common.css">
+   <!-- 引入自己的index.css文件 -->
+   <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
     <div class="lt_container">
@@ -25,32 +27,52 @@
       <div class="lt_main">
           <div class="mui-scroll-wrapper">
               <div class="mui-scroll">
-                <!--这里放置真实显示的DOM内容-->
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
-                <p>wo</p>
+                  <!-- 轮播图区域 -->
+                  <div class="mui-slider">
+                      <div class="mui-slider-group mui-slider-loop">
+                          <!-- 添加第六张假图 -->
+                          <div class="mui-slider-item"><a href="#"><img src="./images/banner6.png" /></a></div>
+
+                          <div class="mui-slider-item"><a href="#"><img src="./images/banner1.png" /></a></div>
+                          <div class="mui-slider-item"><a href="#"><img src="./images/banner2.png" /></a></div>
+                          <div class="mui-slider-item"><a href="#"><img src="./images/banner3.png" /></a></div>
+                          <div class="mui-slider-item"><a href="#"><img src="./images/banner4.png" /></a></div>
+                          <div class="mui-slider-item"><a href="#"><img src="./images/banner5.png" /></a></div>
+                          <div class="mui-slider-item"><a href="#"><img src="./images/banner6.png" /></a></div>
+
+                          <!-- 第一张假图 -->
+                          <div class="mui-slider-item"><a href="#"><img src="./images/banner1.png" /></a></div>
+                      </div>
+                      <!-- 小圆点区域 -->
+                    <div class="mui-slider-indicator">
+                        <div class="mui-indicator mui-active"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>
+                    </div>
+                  </div>
+                  
+                  <!-- 导航区域 -->
+                  <div class="nav">
+                    <ul>
+                      <li><a href="#"><img src="./images/nav1.png" alt=""></a></li>
+                      <li><a href="#"><img src="./images/nav2.png" alt=""></a></li>
+                      <li><a href="#"><img src="./images/nav3.png" alt=""></a></li>
+                      <li><a href="#"><img src="./images/nav4.png" alt=""></a></li>
+                      <li><a href="#"><img src="./images/nav5.png" alt=""></a></li>
+                      <li><a href="#"><img src="./images/nav6.png" alt=""></a></li>
+                    </ul>
+                  </div>
+
               </div>
           </div>
       </div>
       <div class="lt_footer">
         <ul class="mui-clearfix">
           <li>
-            <a href="index.html">
+            <a class="active" href="index.html">
               <i class="fa fa-home"></i>
               <p>首页</p>
             </a>

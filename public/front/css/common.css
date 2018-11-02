@@ -74,6 +74,12 @@ html,body {
   padding-top: 8px;
   color: #fff;
 }
+.lt_footer li a.active {
+  color: orange;
+}
+.lt_footer li a.active p {
+  color: orange;
+}
 .lt_footer li a p {
   color: #fff;
 }
