@@ -93,7 +93,7 @@
       <!-- 模态框 -->
       <div class="modal fade" id="addModal" tabindex="-1"> <!-- 蒙层 -->
         <!-- 真实的模态框 -->
-        <div class="modal-dialog modal-sm">  
+        <div class="modal-dialog">  
           <div class="modal-content">
             <form id="form">
                 <div class="modal-header">
@@ -104,27 +104,40 @@
                     <div class="form-group">
                         <div class="dropdown">
                           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                            请选择一级分类
+                            请选择二级分类
                             <span class="caret"></span>
                           </button>
                           <ul class="dropdown-menu">
                             <!-- 挖坑 -->
                           </ul>
                         </div>
-                        <input type="hidden" name="categoryId">
-
-                        <input type="hidden" name="hot" value="1">
+                        <input type="hidden" name="brandId">
+                        <input type="hidden" name="statu" value="1">
                     </div>
                     <div class="form-group">
-                      <input type="text" name="brandName" class="form-control" id="exampleInputEmail1" placeholder="请输入二级分类">
+                      <input type="text" name="proName" class="form-control"  placeholder="请输入商品名称">
+                    </div>
+                    <div class="form-group">
+                        <textarea  name="proDesc" class="form-control"  rows="3"  placeholder="请输入商品描述"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="num" class="form-control"  placeholder="请输入商品库存">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="size" class="form-control"  placeholder="请输入商品尺码">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="oldPrice" class="form-control"  placeholder="请输入商品原价">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="price" class="form-control"  placeholder="请输入商品现价">
                     </div>
                     <div class="form-group">
                         <label class="btn btn-default" for="fileupload">上传图片</label>
-                        <input id="fileupload" type="file" name="pic1" data-url="/category/addSecondCategoryPic" accept="image/*" style="display:none">
+                        <input id="fileupload" type="file" name="pic1" data-url="/product/addProductPic" accept="image/*" style="display:none">
                     </div>
                     <div class="form-group" id="img_box">
-                        <img width="100" height="100" src="./images/none.png">
-                        <input type="hidden" name="brandLogo">
+                        <!-- <img width="100" height="100" src="./images/none.png"> -->
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -162,6 +175,7 @@
     </div>
   </div>
   
+  <!-- 产品列表模板 -->
   <script type="text/html" id="productTpl">
     {{each rows v i }}
       <tr>
@@ -181,7 +195,13 @@
       </tr>
     {{/each}}
   </script>
-
+  
+  <!-- 二级分类模板 -->
+  <script type="text/html" id="dropDownTpl">
+    {{each rows v i }}
+    <li><a href="#">{{v.brandName}}</a></li>
+    {{/each}}
+  </script>
 
 
 
