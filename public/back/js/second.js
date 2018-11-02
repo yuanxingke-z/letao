@@ -151,7 +151,7 @@ $(function () {
                 $('#form').data('bootstrapValidator').resetForm(true);
                 //手动重置按钮文本和图片内容
                 $('#dropdownMenu1').text('请选择一级分类');   //重置按钮文本
-                $('#img_box img').attr('src', '../images/none.png');      //重置图片路径
+                $('#img_box img').attr('src', 'images/none.png');      //重置图片路径
                 //渲染当前页面
                 currentPage = 1;
                 render(); 
