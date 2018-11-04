@@ -32,18 +32,8 @@
           <div class="mui-scroll-wrapper">
               <div class="mui-scroll">
                 <!--这里放置真实显示的DOM内容-->
-                <ul>
-                    <li><a class="current" href="#">运动馆</a></li>
-                    <li><a href="#">运动馆</a></li>
-                    <li><a href="#">运动馆</a></li>
-                    <li><a href="#">运动馆</a></li>
-                    <li><a href="#">运动馆</a></li>
-                    <li><a href="#">运动馆</a></li>
-                    <li><a href="#">运动馆</a></li>
-                    <li><a href="#">运动馆</a></li>
-                    <li><a href="#">运动馆</a></li>
-                    <li><a href="#">运动馆</a></li>
-                    <li><a href="#">运动馆</a></li>
+                  <ul>
+                   <!-- 挖个坑 -->
                   </ul>
               </div>
             </div>
@@ -54,42 +44,7 @@
               <div class="mui-scroll">
                 <!--这里放置真实显示的DOM内容-->
                 <ul class="mui-clearfix">
-                    <li>
-                      <a href="#">
-                        <img src="./images/brand1.png" alt="">
-                        <p>耐克</p>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="./images/brand1.png" alt="">
-                        <p>耐克</p>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="./images/brand1.png" alt="">
-                        <p>耐克</p>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="./images/brand1.png" alt="">
-                        <p>耐克</p>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="./images/brand1.png" alt="">
-                        <p>耐克</p>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <img src="./images/brand1.png" alt="">
-                        <p>耐克</p>
-                      </a>
-                    </li>
+                    <!-- 挖个坑 -->
                   </ul>
               </div>
             </div>
@@ -125,7 +80,30 @@
     </div>
   </div>
 
+  <!-- 准备一级分类模板 -->
+  <script type="text/html" id="left_tpl">
+    {{each rows v i }}
+    <li><a data-id="{{v.id}}" class="{{ i === 0 ? 'current' : ''}}" href="#">{{v.categoryName}}</a></li>
+    {{/each}}
+  </script>
 
+  <!-- 准备二级分类模板 -->
+  <script type="text/html" id="right_tpl">
+    {{if rows.length === 0}}
+      <p>没有更多分类信息了</p>
+    {{else}}
+
+      {{each rows v i }}
+          <li>
+            <a href="#">
+              <img src="{{v.brandLogo}}" alt="">
+              <p>{{v.brandName}}</p>
+            </a>
+          </li>
+      {{/each}}
+      
+    {{/if}}
+  </script>
 
 
 
@@ -134,8 +112,12 @@
   <script src="./lib/mui/js/mui.js"></script>
   <!-- 引入zepto组件 -->
   <script src="./lib/zepto/zepto.min.js"></script>
+  <!-- 引入模板引擎插件 -->
+  <script src="./lib/artTemplate/template-web.js"></script>
   <!-- 引入共同的js文件 -->
   <script src="./js/common.js"></script>
+  <!-- 引入本页的js文件 -->
+  <script src="./js/category.js"></script>
 </body>
 
 </html>

@@ -2,7 +2,6 @@
 .lt_main .lt_category_left {
   width: 90px;
   height: 100%;
-  overflow: hidden;
   position: relative;
 }
 .lt_main .lt_category_left li a {
@@ -25,6 +24,10 @@
   height: 100%;
   overflow: hidden;
   position: relative;
+  padding: 10px;
+}
+.lt_main .lt_category_right .mui-scroll-wrapper {
+  padding: 10px;
 }
 .lt_main .lt_category_right li {
   float: left;
