@@ -86,6 +86,7 @@ html,body {
 }
 .lt_footer li a p {
   color: #fff;
+  margin: 0;
 }
 
 /* 主体内容 */
