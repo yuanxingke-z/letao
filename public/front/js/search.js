@@ -110,7 +110,7 @@ $(function () {
     //优化
     //判断数组是否有重复，有重复，就把之前的重复项删掉
     //获取重复项的下标
-    var index = arr.indexof(key);
+    var index = arr.indexOf(key);
     //如果有重复，就删除掉
     if (index != -1) {
       arr.splice(index, 1);

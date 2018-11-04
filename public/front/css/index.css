@@ -14,33 +14,3 @@
   height: 100%;
 }
 
-/* 产品区域 */
-.lt_main .product {
-  padding: 10px;
-}
-.lt_main .product li {
-  float: left;
-  width: 48%;
-  margin-bottom: 15px;
-}
-.lt_main .product li:nth-child(odd) {
-  margin-right: 4%;
-}
-.lt_main .product li a {
-  display: block;
-  text-align: center;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 5px;
-}
-.lt_main .product li img {
-  width: 130px;
-  height: 130px;
-  margin: 0 auto;
-}
-.lt_main .product .price {
-  color: red;
-}
-.lt_main .product .oldPrice {
-  text-decoration: line-through;
-}
