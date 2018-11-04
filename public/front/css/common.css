@@ -4,7 +4,10 @@ ul {
   margin: 0;
   padding: 0;
 }
-
+img {
+  display: block;
+  width: 100%;
+}
 /* 整体布局 */
 html,body {
   height: 100%;
@@ -17,6 +20,7 @@ html,body {
   padding-top: 45px;
   padding-bottom: 55px;
   position: relative;
+  background-color: #fff;
 }
 
 /* 头部布局*/
@@ -87,7 +91,7 @@ html,body {
 /* 主体内容 */
 .lt_main {
   height: 100%;
-  background-color: skyblue;
   position: relative;
 }
+
 
